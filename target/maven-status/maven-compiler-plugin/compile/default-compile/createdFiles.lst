@@ -1,0 +1,15 @@
+DocGen\regs\UserRegistration.class
+DocGen\config\ResourceServerConfig.class
+DocGen\entities\Document.class
+DocGen\Application.class
+DocGen\repositories\UserRepository.class
+DocGen\entities\Role.class
+DocGen\controllers\UserController.class
+DocGen\service\DocumentService.class
+DocGen\controllers\HomeController.class
+DocGen\config\CustomUserDetails.class
+DocGen\controllers\DocumentController.class
+DocGen\service\UserService.class
+DocGen\config\AuthorizationServerConfig.class
+DocGen\entities\User.class
+DocGen\repositories\DocumentRepository.class
