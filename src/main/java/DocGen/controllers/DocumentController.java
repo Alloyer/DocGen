@@ -19,10 +19,10 @@ public class DocumentController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = "/")
-    public String index() {
-        return "index";
-    }
+//    @GetMapping(value = "/")
+//    public String index() {
+//        return "index";
+//    }
 
     @GetMapping(value = "/documents")
     public List<Document> documents(){
