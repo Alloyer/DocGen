@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/header :: header('Login')" />
+
+<body>
+
+<div id="navbar" class="navbar-fixed z-depth-3">
+    <nav class="indigo accent-2">
+        <div class="nav-wrapper container">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/goLogin">Log In</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div id="root" class="container">
+
+    <div class="section">
+        <div class="container">
+            <div class="row valign-wrapper">
+                <div class="z-depth-1 col s12 m6 offset-m3 center-align hoverable">
+
+                    <h4>New Here? Sign up now!!!</h4>
+                    <div class="col s9 offset-s1">
+                        <form>
+                            <div class="row">
+
+                                <div class="input-field">
+                                    <input v-model="username" type="text" class="validate" id="username"/>
+                                    <label class="active">Username</label>
+                                </div>
+
+                                <div class="input-field">
+                                    <input v-model="password" type="password" class="validate" id="password"/>
+                                    <label class="active">Password</label>
+                                </div>
+
+                                <button type="button" class="btn btn-default" v-on:click="login">Login</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div th:replace="fragments/footer :: foot"></div>
+<script>
+    var app = new Vue({
+        el: '#root',
+        data: {
+            username: "",
+            password: ""
+        },
+        methods: {
+            login() {
+                var params = new URLSearchParams();
+                params.append('grant_type', 'password');
+                params.append('username', this.username);
+                params.append('password', this.password);
+                axios({
+                    method: 'post',
+                    url: '/oauth/token',
+                    auth: {username: 'my-trusted-client', password: 'secret'},
+                    headers: { "Content-type": "application/x-www-form-urlencoded; charset=utf-8"},
+                    data: params
+                })
+                .then(function (response) {
+                   document.cookie = "access_token=" + response.data.access_token + ";path=/";
+                });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "alloyer",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "vue-cookie": "^1.1.4"
+  }
 }

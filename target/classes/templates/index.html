@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Docs</title>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" th:href=@{static/css/materialize.min.css} href="../../resources/static/css/materialize.min.css" media="screen,projection">
-</head>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/header :: header('Start Page')" />
+
 <body>
-<div id="root"></div>
+
+<div id="navbar" class="navbar-fixed z-depth-3">
+    <nav class="indigo accent-2">
+        <div class="nav-wrapper container">
+            <ul class="right hide-on-med-and-down">
+                <li id="Home"><a href="/">Home</a></li>
+                <li id="Log_In"><a href="/goLogin">Log In</a></li>
+                <li id="Sign_Up"><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div id="root" class="container">
+
+    <div class="section center">
+        <h1>MAIN PAGE</h1>
+    </div>
+
+</div>
+
 </body>
-
-<script src="http://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="http://vuejs.org/js/vue.js"></script>
-<script>
-</script>
-
 </html>

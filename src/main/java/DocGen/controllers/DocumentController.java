@@ -24,7 +24,7 @@ public class DocumentController {
 //        return "index";
 //    }
 
-    @GetMapping(value = "/documents")
+    @GetMapping(value = "/getDocuments")
     public List<Document> documents(){
         return documentService.getAllDocuments();
     }
